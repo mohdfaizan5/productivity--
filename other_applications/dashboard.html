@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="../static/general.css">
+  <link rel="stylesheet" href="../static/dashboard.css">
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <a href="../index.html">
+        <h2>Productivity++</h2>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="" style="text-decoration: underline;">Dashboard</a>
+        <a href="pomodoro.html">Pomodoro</a>
+        <a href="dont-break-the-chain.html">Chain Strategy</a>
+        <a href="profile.html">
+          <div class="nav-profile-logo">P</div>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section style="display: flex;justify-content: space-between;align-items: center;">
+      <h1>Dashboard</h1>
+      <select name="" id="">
+
+        <option value="today">Today's</option>
+        <option value="week">Weekly</option>
+        <option value="month">Monthly</option>
+        <option value="month">6 months</option>
+      </select>
+    </section>
+
+    <div class="progressBarContainer">
+      <div class="container1">
+
+        <label for="progress">
+          <div>
+            <span style="font-weight: 600;">Pomodoro</span>
+            <span id="totalWorkingHrsDisplay" style="font-size: 12px;">9hrs/150hrs</span>
+          </div>
+
+          <progress class="proBar" value="9" max="150"></progress>
+        </label>
+        <br>
+        
+        <label for="progress">
+          <div>
+            <span style="font-weight: 600;">Clients Approches</span>
+            <span style="font-size: 12px;">2/300</span>
+          </div>
+
+          <progress class="proBar" value="9" max="150"></progress>
+        </label>
+        <br>
+
+        <label for="progress">
+          <div>
+            <span style="font-weight: 600;">Projects</span>
+            <span style="font-size: 12px;">5/200</span>
+          </div>
+
+          <progress class="proBar" value="5" max="200"></progress>
+        </label>
+        <br>
+        <!--  -->
+
+
+      </div>
+      <div>
+        <div id="roundProBar" role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100" style="--value: 67"></div>
+      </div>
+    </div>
+
+
+  </main>
+  <script src="../static/storage.js"></script>
+  <script>
+    document.querySelector('select').addEventListener('change', ()=>{
+      alert(document.querySelector('select').value)
+    })
+    document.querySelector('#totalWorkingHrsDisplay').innerHTML = `${totalPomoHrs}hrs / 150hrs`
+
+    // document.querySelector('#roundProBar').style = "--value: 6"
+    // document.querySelector('#roundProBar').style.value = 6
+
+  </script>
+</body>
+
+</html>

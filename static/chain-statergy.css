@@ -1,0 +1,56 @@
+.allProgressContainer{
+  display: grid;
+  grid-template-columns: 50% 30% 20%;
+}
+
+/* .allProgressContainer section{
+  background-color: red;
+  width: 100px;
+  height: 300px;
+} */
+
+.progressContainer1 {
+  display: grid;
+  /* grid-template-columns:80px 80px  80px 80px  80px 80px  80px  80px  80px  80px  80px ; */
+  grid-template-columns: 80px  80px  80px  80px  80px ;
+  column-gap: 5px;
+  row-gap: 5px;
+  /* margin-top: 50px; */
+}
+
+.progressContainer1 div,
+.progressContainer2 div,
+.progressContainer3 div
+{
+  background-color: rgb(18, 18, 18);
+  border: 1px solid red;
+  height: 80px ;
+  width: 80px ;
+  font-size: 35px;
+  color: white;
+  text-align: center;
+  justify-items: center;
+}
+
+
+/* CLIENT APPROCH */
+.progressContainer2 {
+  display: grid;
+  /* grid-template-columns:80px 80px  80px 80px  80px 80px  80px  80px  80px  80px  80px ; */
+  grid-template-columns: 80px 80px 80px ;
+  column-gap: 5px;
+  row-gap: 5px;
+  /* margin-top: 50px; */
+}
+
+
+
+/* Projects Pomodoro */
+.progressContainer3 {
+  display: grid;
+  /* grid-template-columns:80px 80px  80px 80px  80px 80px  80px  80px  80px  80px  80px ; */
+  grid-template-rows:  80px ;
+  column-gap: 5px;
+  row-gap: 5px;
+  /* margin-top: 50px; */
+}

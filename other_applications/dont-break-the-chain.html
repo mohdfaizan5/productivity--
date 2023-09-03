@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dont Break the chain</title>
+  <link rel="stylesheet" href="../static/general.css">
+  <link rel="stylesheet" href="../static/chain-statergy.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="../index.html">
+        <h2>Productivity++</h2>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../other_applications/dashboard.html">Dashboard</a>
+        <a href="../other_applications/pomodoro.html">Pomodoro</a>
+        <a href="../other_applications/dont-break-the-chain.html" style="text-decoration: underline;">Chain Strategy</a>
+        <a href="profile.html">
+          <div class="nav-profile-logo">P</div>
+        </a>
+      </div>
+    </nav>
+  </header>
+  <main>
+
+    <h1>Dont break the chain strategy</h1>
+    <h2>You have completed <span id="totalWorkingHrsDisplay" style="color: red;">3</span> steps towards your success
+    </h2>
+
+    <div class="allProgressContainer">
+      <section>
+        <h2>Working Hours</h2>
+        <section id="" class="progressContainer1">
+          <!-- <div class="box done"></div>
+        <div></div>
+        <div></div> -->
+        </section>
+      </section>
+
+      <section>
+        <h2>Clients</h2>
+        <section class="progressContainer2">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </section>
+      </section>
+      </section>
+
+      <section>
+        <h2>Projects</h2>
+        <section class="progressContainer3">
+          <div></div>
+          <div></div>
+          <div></div>
+        </section>
+      </section>
+    </div>
+
+  </main>
+
+  <script src="../static/storage.js"></script>
+  <script>
+    let progressContainer = document.querySelector('.progressContainer1')
+    let a = Math.floor(totalPomoMins / 60)
+
+    document.querySelector('#totalWorkingHrsDisplay').innerHTML = a
+    for (i = 0; i < a; i++) {
+      let newBox = document.createElement('div')
+      newBox.innerHTML = i + 1;
+      progressContainer.appendChild(newBox)
+    }
+  </script>
+</body>
+
+</html>
