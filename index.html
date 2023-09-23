@@ -5,8 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Accountability-Partner</title>
-  <link rel="stylesheet" href="static/general.css">
-  <link rel="stylesheet" href="static/index.css">
+  <link rel="stylesheet" href="static/css/general.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 
 <body>
@@ -17,9 +18,16 @@
         <a href="" style="text-decoration: underline;">Home</a>
         <a href="other_applications/dashboard.html">Dashboard</a>
         <a href="other_applications/pomodoro.html">Pomodoro</a>
+        <a href="other_applications/todo.html">Todo</a>
         <a href="other_applications/dont-break-the-chain.html">Chain Strategy</a>
         <a href="other_applications/profile.html">
           <div class="nav-profile-logo">P</div>
+        </a>
+      </div>
+
+      <div class="nav-links-mobile">
+        <a href="">
+          <i class="ri-menu-3-line"></i>
         </a>
       </div>
     </nav>
@@ -27,15 +35,24 @@
 
   <main>
     <h1>Accountabililty Partner</h1>
-    Visualise your success!!
-
+    <span class="userGreet"></span>
     <div class="container1">
 
       <section class="month-progress-container">
         <h2>Monthly Progress</h2>
         <h1 id="pomoHrsDisplay">0 hrs</h1>
-        <progress id="pomoProgressBar" value="9" max="150"
-          style="accent-color: red; width: 300px;height: 30px;"></progress>
+        <progress id="pomoProgressBar" value="9" max="150" style="accent-color: red; width: 300px;height: 30px;">
+        </progress>
+        <button id="countBtn" class="basicBtn2">Count</button>
+
+        <h1 id="clientHrsDisplay">0 hrs</h1>
+        <progress id="clientProgressBar" value="9" max="150"
+          style="accent-color: rgb(49, 45, 45); width: 300px;height: 30px;"></progress>
+        <button id="clientCountBtn" class="basicBtn2">Count</button>
+
+        <h1 id="projectHrsDisplay">0 hrs</h1>
+        <progress id="projectProgressBar" value="9" max="150"
+          style="accent-color: rgb(30, 0, 255); width: 300px;height: 30px;"></progress>
         <button id="countBtn" class="basicBtn2">Count</button>
       </section>
 
@@ -50,6 +67,9 @@
         </ol>
       </section>
     </div>
+    <div class="assistant_container">
+
+    </div>
     <article class="statements">
 
       <details>
@@ -59,13 +79,13 @@
 
       <details>
         <summary>Mission</summary>
-        To continuously upskill myself in all the parameters of life 
+        To continuously upskill myself in all the parameters of life
       </details>
     </article>
   </main>
 
 </body>
 
-<script src="static/app.js" defer></script>
+<script src="static/js/app.js" defer></script>
 
 </html>

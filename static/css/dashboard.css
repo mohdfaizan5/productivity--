@@ -105,13 +105,10 @@ label div{
   color: var(--primary);
 }
 
-/* demo */
-/* body {
-  margin: 0;
-  display: grid;
-  place-items: center;
-  height: 100vh;
-  background: #f0f8ff;
-}
+/* Responsive Design */
 
- */
+@media (max-width: 426px) {
+  .progressBarContainer{
+    flex-direction: column;
+  }  
+}

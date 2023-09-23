@@ -1,0 +1,20 @@
+.mainContainer1{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+
+img{
+  width: 300px;
+}
+
+.mainContainer1 .left{
+  width: 500px;
+}
+
+.mainContainer1 #element{
+  font-family: 'EB Garamond', serif;
+  font-size: 48px;
+  color: rgb(23, 23, 23);
+}

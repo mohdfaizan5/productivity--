@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profile | Productivity++</title>
-  <link rel="stylesheet" href="../static/general.css">
+  <link rel="stylesheet" href="../static/css/general.css">
   <style>
-    .textInput{
+    .textInput {
       width: 350px;
       height: 30px;
       margin-bottom: 10px;
       display: block;
     }
 
-    .textInputArea{
+    .textInputArea {
       max-width: 350px;
       min-width: 350px;
       max-height: 100px;
       min-height: 30px;
     }
 
-    .textInputNum{
+    .textInputNum {
       width: 40px;
     }
   </style>
 </head>
+
 <body>
   <header>
     <nav>
@@ -46,13 +48,54 @@
   <main>
     <h1>Profile:</h1>
     <form action="" class="main-form">
-      <input type="text" placeholder="Name" class="textInput">
-      <input type="text" placeholder="Goals" class="textInput">
-      <input type="number" name="" id="" value="0" class="textInput textInputNum">
-      <textarea name="" id="" cols="30" rows="10" class="textInput textInputArea" placeholder="Vision"></textarea>
-      <textarea name="" id="" cols="30" rows="10" class="textInput textInputArea" placeholder="Mission Statement"></textarea>
-      <input type="Submit">
+      <input type="text" placeholder="Name" id="name" class="textInput" required>
+      <input type="text" placeholder="Goals" id="goals" class="textInput" required>
+      <input type="number" name="" value="" id="targetHours" class="textInput textInputNum" required>
+      <textarea name="" cols="30" rows="10" class="textInput textInputArea" placeholder="Vision" id="visionStatement"></textarea>
+      <textarea name="" id="missionStatement" cols="30" rows="10" class="textInput textInputArea"
+        placeholder="Mission Statement"></textarea>
+
+      <input type="reset" class="basicBtn2">
+      <input type="Submit" class="basicBtn2">
     </form>
   </main>
+  <script>
+
+    let name = document.querySelector('#name')
+    let goals = document.querySelector('#goals')
+    let targetHours = document.querySelector('#targetHours')
+    let visionStatement = document.querySelector('#visionStatement')
+    let missionStatement = document.querySelector('#missionStatement')
+
+    let profileDetails;
+    if(!localStorage.getItem('profileDetails')){
+      profileDetails = {}
+      localStorage.setItem('profileDetails',JSON.stringify(profileDetails))
+    }
+    else{
+      profileDetails = JSON.parse(localStorage.getItem('profileDetails'))
+      name.value = profileDetails.name
+      goals.value = profileDetails.goals
+      console.log('the type of hours fetch from local storage is', typeof Number(profileDetails.targetHours), Number(profileDetails.targetHours))
+      targetHours.value = profileDetails.targetHours
+      visionStatement.value = profileDetails.visionStatement
+      missionStatement.value = profileDetails.missionStatement
+    }
+    
+
+    document.querySelector('form').addEventListener('submit', () => {
+      profileDetails.name = document.querySelector('#name').value
+      profileDetails.goals = document.querySelector('#goals').value
+      profileDetails.targetHours = document.querySelector('#targetHours').value
+      profileDetails.visionStatement = document.querySelector('#visionStatement').value
+      profileDetails.missionStatement = document.querySelector('#missionStatement').value
+
+      console.log(profileDetails)
+      localStorage.setItem('profileDetails',JSON.stringify(profileDetails))
+      alert('Submitted')
+      return true
+    })
+  </script>
 </body>
+
 </html>
